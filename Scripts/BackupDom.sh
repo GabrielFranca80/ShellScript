@@ -162,7 +162,7 @@ sleep 5
 #        ssmtp -C /root/gerencia/scripts/ssmtp.conf bkpgrp@cmcsolucoes.com.br < $arquivo_log
 #fi
 
-#sync
+#sync 
 #sleep 20
 #sync
 ######################### Desmontar as unidades externas ###########################	
