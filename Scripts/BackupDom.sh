@@ -106,17 +106,17 @@ function BACKUPLX () {
                                            
 ######################### Montagem do HD externo e inicio do Backup ###########################  
 #Desmontando o hd externo caso ele esteja montado
-##	umount /media/smart
-##sleep 2
+	umount /media/smart
+sleep 2
 ##mount /dev/sdb1 /media/smart
 #Montando o SMART e validando a montagem
-##if ! mount LABEL=hdbkp /media/smart; then
-##   echo "Subject:07 - Erro na unidade de Backup da HB Engenharia" > $arquivo_log
-##   echo "hd externo com erro backup nao realizado !!!!!" >> $arquivo_log
-##        SHELL=/bin/sh
-##        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-##        ssmtp -C /root/gerencia/scripts/ssmtp.conf suporte@cmcsolucoes.com.br < $arquivo_log
-##else
+if ! mount LABEL=hdbkp /media/smart; then
+   echo "Subject:07 - Erro na unidade de Backup da HB Engenharia" > $arquivo_log
+   echo "hd externo com erro backup nao realizado !!!!!" >> $arquivo_log
+        SHELL=/bin/sh
+        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+        ssmtp -C /root/gerencia/scripts/ssmtp.conf suporte@cmcsolucoes.com.br < $arquivo_log
+else
 
 ######################### Criar pastas do backup ###########################
 	mkdir -p /var/log/backup/limpeza
@@ -126,16 +126,14 @@ function BACKUPLX () {
    
 ######################### Executar as funções de backup ###########################
 
-##LIMPABACKUP
-##sleep 5
-##BACKUPHOME
-##sleep 5
-##BACKUPDPTO
-##sleep 5
+LIMPABACKUP
+sleep 5
+BACKUPHOME
+sleep 5
+BACKUPDPTO
+sleep 5
 BACKUPSHARE
-##sleep 5
-
-
+sleep 5
 
 ######################### Relatório do Backup enviado por e-mail ###########################
         
