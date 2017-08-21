@@ -139,7 +139,7 @@ sleep 5
         
 #Testar arquivo gzip
 #gzip -tv backup.tar.gz 
-#backup.tar.gz:   OK
+#backup.tar.gz:   OK asdf
 
 
 
